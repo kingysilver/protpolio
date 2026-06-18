@@ -3,161 +3,133 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Taste Archive Portfolio</title>
+  <title>맛집 포트폴리오</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 
 <body>
 
-  <!-- INTRO -->
-  <section class="section intro">
-    <h1>HOW DO WE TASTE VISUALLY?</h1>
-    <p>Poster · Video · Goods<br/>하나의 맛을 세 가지 언어로 기록하다</p>
+  <!-- 헤더 -->
+  <header>
+    <h1>🍽️ My Food Portfolio</h1>
+    <p>맛집 콘텐츠 제작 포트폴리오</p>
+  </header>
+
+  <!-- 포스터 -->
+  <section class="card">
+    <h2>📌 맛집 포스터</h2>
+    <img src="images/poster.jpg" alt="맛집 포스터">
   </section>
 
-  <!-- POSTER -->
-  <section class="section poster">
-    <div class="text">
-      <h2>FOOD POSTER</h2>
-      <p>시각적으로 맛을 압축하다</p>
-    </div>
-    <div class="media">
-      <img src="poster.jpg" alt="poster">
-    </div>
-  </section>
+  <!-- 영상 -->
+  <section class="card">
+    <h2>🎬 맛집 홍보 영상</h2>
 
-  <!-- VIDEO -->
-  <section class="section video">
-    <video autoplay muted loop>
-      <source src="video.mp4" type="video/mp4">
-    </video>
-    <div class="overlay">
-      <h2>MOTION FLAVOR STUDY</h2>
-      <p>맛을 시간으로 기록하다</p>
+    <div class="video-box">
+      <video id="video" src="video/promo.mp4"></video>
+      <button id="playBtn">▶ 재생</button>
     </div>
   </section>
 
-  <!-- GOODS -->
-  <section class="section goods">
-    <h2>FLAVOR OBJECTS</h2>
-    <div class="grid">
-      <img src="goods1.jpg" />
-      <img src="goods2.jpg" />
-      <img src="goods3.jpg" />
-    </div>
-    <p>경험을 손에 쥐는 형태로 확장하다</p>
+  <!-- 굿즈 -->
+  <section class="card">
+    <h2>🎁 맛집 굿즈</h2>
+    <img src="images/goods.jpg" alt="맛집 굿즈">
   </section>
 
-  <!-- CONTACT -->
-  <section class="section contact">
-    <h2>CONTACT</h2>
-    <p>email: yourmail@gmail.com</p>
-    <p>instagram: @yourid</p>
-  </section>
+  <footer>
+    <p>© 2026 My Portfolio</p>
+  </footer>
 
   <script src="script.js"></script>
-
-
-// 스크롤 등장 효과 (간단 버전)
-const sections = document.querySelectorAll(".section");
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.style.opacity = 1;
-      entry.target.style.transform = "translateY(0)";
-    } else {
-      entry.target.style.opacity = 0.3;
-      entry.target.style.transform = "translateY(40px)";
-    }
-  });
-}, { threshold: 0.2 });
-
-sections.forEach(sec => {
-  sec.style.transition = "all 0.8s ease";
-  observer.observe(sec);
-});
 </body>
 </html>
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: serif;
-  background: #111;
-  color: #f5f1e8;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(180deg, #d9f3ff, #ffffff);
+  color: #1b2b34;
 }
 
-/* 공통 섹션 */
-.section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 80px 20px;
+/* 헤더 */
+header {
+  text-align: center;
+  padding: 60px 20px;
+  background: #8fd3ff;
+  color: white;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
 }
 
-/* INTRO */
-.intro h1 {
-  font-size: 48px;
-  letter-spacing: 2px;
+/* 카드 */
+.card {
+  width: 80%;
+  max-width: 900px;
+  margin: 40px auto;
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-.intro p {
-  margin-top: 20px;
-  opacity: 0.7;
+.card h2 {
+  margin-bottom: 20px;
 }
 
-/* POSTER */
-.poster {
-  flex-direction: row;
-  gap: 60px;
+/* 이미지 */
+.card img {
+  width: 100%;
+  border-radius: 15px;
 }
 
-.poster img {
-  width: 400px;
-  border-radius: 10px;
-}
-
-/* VIDEO */
-.video {
+/* 영상 영역 */
+.video-box {
   position: relative;
+  width: 100%;
+  border-radius: 15px;
   overflow: hidden;
 }
 
-.video video {
-  position: absolute;
+video {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.5;
+  border-radius: 15px;
 }
 
-.video .overlay {
-  position: relative;
+/* 재생 버튼 */
+#playBtn {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0, 140, 255, 0.85);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#playBtn:hover {
+  background: rgba(0, 120, 220, 1);
+}
+
+/* 푸터 */
+footer {
   text-align: center;
-  z-index: 2;
+  padding: 30px;
+  color: #555;
 }
 
-/* GOODS */
-.goods .grid {
-  display: flex;
-  gap: 20px;
-  margin-top: 30px;
-}
+const video = document.getElementById("video");
+const btn = document.getElementById("playBtn");
 
-.goods img {
-  width: 200px;
-  border-radius: 10px;
-}
-
-/* CONTACT */
-.contact {
-  text-align: center;
-  opacity: 0.8;
-}
+btn.addEventListener("click", () => {
+  if (video.paused) {
+    video.play();
+    btn.textContent = "⏸ 일시정지";
+  } else {
+    video.pause();
+    btn.textContent = "▶ 재생";
+  }
+});
