@@ -79,3 +79,85 @@ sections.forEach(sec => {
 });
 </body>
 </html>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: serif;
+  background: #111;
+  color: #f5f1e8;
+}
+
+/* 공통 섹션 */
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 80px 20px;
+}
+
+/* INTRO */
+.intro h1 {
+  font-size: 48px;
+  letter-spacing: 2px;
+}
+
+.intro p {
+  margin-top: 20px;
+  opacity: 0.7;
+}
+
+/* POSTER */
+.poster {
+  flex-direction: row;
+  gap: 60px;
+}
+
+.poster img {
+  width: 400px;
+  border-radius: 10px;
+}
+
+/* VIDEO */
+.video {
+  position: relative;
+  overflow: hidden;
+}
+
+.video video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+.video .overlay {
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+
+/* GOODS */
+.goods .grid {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.goods img {
+  width: 200px;
+  border-radius: 10px;
+}
+
+/* CONTACT */
+.contact {
+  text-align: center;
+  opacity: 0.8;
+}
